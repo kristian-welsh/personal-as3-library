@@ -59,6 +59,22 @@ package kris.test {
 		}
 
 		/**
+		 * Asserts that the funciton has been logged as expected.
+		 */
+		public function assertLoggedAtPosition(position:uint, expectedFunction:Function, expectedArguments:Array = null):void {
+			if (position >= functionLog.length)
+				fail("no function calls found at position " + position)
+			if (functionLog[position] != expectedFunction)
+				fail("incorrect function call found at position " + position)
+			if (!expectedArguments)
+				return
+			var actualArguments:Array = argumentLog[position]
+			for (var i:uint = 0; i < expectedArguments.length; i++)
+				if (actualArguments[i] != expectedArguments[i])
+					fail("argument mismatch found at argument position " + i)
+		}
+
+		/**
 		 * Asserts that the funciton has not been logged.
 		 */
 		public function assertNotLogged(unexpectedFunction:Function, unexpectedArguments:Array = null):void {
