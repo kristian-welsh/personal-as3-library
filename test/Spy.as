@@ -1,6 +1,6 @@
 package kris.test {
 	import asunit.framework.Assert;
-	import lib.Util;
+	import kris.Util;
 
 	public class Spy extends Assert {
 		private var target:Object;
@@ -29,19 +29,17 @@ package kris.test {
 		 * Asserts that the funciton has been logged as expected.
 		 */
 		public function assertLogged(expectedFunction:Function, expectedArguments:Array = null):void {
-			if (expectedArguments == null)
-				assertLoggedWithoutArguments(expectedFunction);
-			else
+			assertLoggedAtAll(expectedFunction);
+			if (expectedArguments)
 				assertLoggedWithArguments(expectedFunction, expectedArguments);
 		}
 
-		private function assertLoggedWithoutArguments(expectedFunction:Function):void {
+		private function assertLoggedAtAll(expectedFunction:Function):void {
 			if (!Util.listContainsItem(functionLog, expectedFunction))
 				failNotLogged(expectedFunction);
 		}
 
 		private function assertLoggedWithArguments(expectedFunction:Function, expectedArguments:Array):void {
-			assertLoggedWithoutArguments(expectedFunction);
 			for (var functionIndex:uint = 0; functionIndex < functionLog.length; ++functionIndex) {
 				if (expectedFunction == functionLog[functionIndex]) {
 					if (argsMatch(argumentLog[functionIndex], expectedArguments))
