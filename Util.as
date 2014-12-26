@@ -11,11 +11,11 @@
 	 */
 	public class Util {
 		/**
-		 * Finds the source name of callee (ie: called on some function foo it would return "foo")
+		 * Finds the source name of callee (eg: Util.getFunctionName(someMovieClip.gotoAndStop, someMovieClip) outputs "gotoAndStop")
 		 * This only works for public instance functions.
 		 * WARNING: REFLECTION
 		 * @param	callee The public instance function you want to find the name of.
-		 * @param	calleeOrigin The specific instance (not class) that the function was taken from.
+		 * @param	calleeOrigin The specific instance that the function referance was taken from.
 		 * @return	The name of callee.
 		 * @throws	An Error with message "Method name not found for object "calleeOrigin"" if callee is not a public instance function on calleObject.
 		 */
