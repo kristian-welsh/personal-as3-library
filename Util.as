@@ -23,7 +23,7 @@
 			for each (var method:XML in describeType(calleeOrigin)..method)
 				if (calleeOrigin[method.@name] == callee)
 					return method.@name;
-			throw new Error("Method name not found for object \"" + calleeOrigin + "\". Either the function is not defined, or you gave us the wrong instance");
+			throw new FunctionNameError("Method name not found for object \"" + calleeOrigin + "\". Either the function is not defined, or you gave us the wrong instance");
 		}
 
 		/**
