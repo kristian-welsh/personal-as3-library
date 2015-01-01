@@ -23,7 +23,7 @@
 			for each (var method:XML in describeType(calleeOrigin)..method)
 				if (calleeOrigin[method.@name] == callee)
 					return method.@name;
-			throw new FunctionNameError("Method callee not found on object \"" + calleeOrigin + "\", callee must be a public instance function on calleeOrigin");
+			throw new FunctionNameError("Method callee not found on object calleeOrigin, callee must be a public instance function on calleeOrigin");
 		}
 
 		/**
