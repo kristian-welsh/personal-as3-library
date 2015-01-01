@@ -17,13 +17,13 @@
 		 * @param	callee The public instance function you want to find the name of.
 		 * @param	calleeOrigin The specific instance that the function referance was taken from.
 		 * @return	The name of callee.
-		 * @throws	An Error with message "Method name not found for object "calleeOrigin"" if callee is not a public instance function on calleObject.
+		 * @throws	An FunctionNameError if callee is not a public instance function on calleeObject.
 		 */
 		static public function getFunctionName(callee:Function, calleeOrigin:Object):String {
 			for each (var method:XML in describeType(calleeOrigin)..method)
 				if (calleeOrigin[method.@name] == callee)
 					return method.@name;
-			throw new FunctionNameError("Method name not found for object \"" + calleeOrigin + "\". Either the function is not defined, or you gave us the wrong instance");
+			throw new FunctionNameError("Method callee not found on object \"" + calleeOrigin + "\", callee must be a public instance function on calleeOrigin");
 		}
 
 		/**
