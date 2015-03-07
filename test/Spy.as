@@ -2,6 +2,7 @@ package kris.test {
 	import asunit.framework.Assert;
 	import kris.Util;
 
+	// TODO: Improve assert functionality. Need more flexible asserts.
 	public class Spy extends Assert {
 		private var target:Object;
 		private var functionLog:Vector.<Function> = new Vector.<Function>();
@@ -51,7 +52,7 @@ package kris.test {
 
 		private function argsMatch(loggedArguments:Array, expectedArguments:Array):Boolean {
 			for (var argumentIndex:uint = 0; argumentIndex < loggedArguments.length; ++argumentIndex) {
-				if (expectedArguments[argumentIndex] == loggedArguments[argumentIndex]) {
+				if (expectedArguments[argumentIndex] === loggedArguments[argumentIndex]) {
 					return true;
 				}
 			}
