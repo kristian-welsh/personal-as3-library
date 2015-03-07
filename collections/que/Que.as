@@ -1,4 +1,4 @@
-package com.util.que {
+package kris.collections.que {
 	import flash.utils.getQualifiedClassName;
 	
 	public class Que {

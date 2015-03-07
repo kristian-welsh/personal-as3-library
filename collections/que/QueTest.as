@@ -1,4 +1,4 @@
-package com.util.que {
+package kris.collections.que {
 	import kris.test.SuiteProvidingTestCase;
 	
 	// TODO: remember to test at the end of a uint's value range
