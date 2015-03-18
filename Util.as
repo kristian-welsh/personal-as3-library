@@ -41,7 +41,7 @@
 		 * Returns whether list contains itemToFind in one of it's indexes.
 		 * @param	list A formaly defined list (eg: Array, Vector).
 		 * @param	itemToFind A valid item for the list.
-		 * @return	True if itemToFind is in list, otherwise false.
+		 * @return	true if itemToFind is in list, otherwise false.
 		 */
 		static public function listContainsItem(list:Object, itemToFind:Object):Boolean {
 			for each(var foundItem:Object in list)

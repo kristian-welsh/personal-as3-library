@@ -1,4 +1,5 @@
 package kris.collections.que {
+	
 	public class Que {
 		private const OVERFLOW_ERROR:QueError = new QueError(QueError.NEXT_OVERFLOW)
 		
